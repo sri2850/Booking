@@ -1,0 +1,8 @@
+version: '1'
+
+
+services:
+  bookingProblem:
+    build: . 
+    ports:
+      - '30099:8080'
