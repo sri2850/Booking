@@ -55,7 +55,7 @@ node {
                     }"""
         server.upload(uploadSpec)
         
-        }
+        }}
      
   
   
@@ -63,8 +63,9 @@ node {
   
   
    stage('Docker-Stage-Deployment') {
+   dir("/home/mtadminnuvepro/.jenkins/workspace/BookingProblem/Docker"){
    sh label: '', script: 'sudo docker-compose up -d --build'
-  }
+  }}
   
   stage('Input') {
                 input('Do you want to proceed?')           
@@ -75,7 +76,7 @@ node {
   sh label: 'Jenkins', script: "echo '<h1> TASK BUILD ID: ${env.BUILD_DISPLAY_NAME}</h1>' > ../../../04-Terraform/03-Ansible-Deploy/ansible/04-Tomcat/templates/apps/index.html"
 }  
    
- }
+ 
 
 def project_terra="04-Terraform/03-Ansible-Deploy"
 dir(project_terra) {
