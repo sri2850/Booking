@@ -10,7 +10,7 @@ RUN rm -rf /usr/local/tomcat/webapps/*
 
  
 
-COPY ../BookingProblem/target/BookingProblem-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps/ROOT.war
+COPY Colleges-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps/ROOT.war
 
  
 
