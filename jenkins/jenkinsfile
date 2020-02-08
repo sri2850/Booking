@@ -20,12 +20,12 @@ node {
   
   
   
-    stage('Sonar Analysis'){        
+/*    stage('Sonar Analysis'){        
         withSonarQubeEnv('sonarqube'){
          sh 'mvn sonar:sonar'
             }
 }
-  
+  */
   
   
   
@@ -38,7 +38,7 @@ node {
    sh label: '', script: 'mvn package'
   }
   
-   stage('Archive-Artifacts') {
+   /*stage('Archive-Artifacts') {
    archiveArtifacts 'target/*.war'
   }
   
@@ -55,7 +55,7 @@ node {
         
         }}
      
-  
+  */
   
   
   
