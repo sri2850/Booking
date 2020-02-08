@@ -64,7 +64,7 @@ node {
    dir("/home/mtadminnuvepro/mvc/BookingProblem"){
    sh label: '', script: 'sudo docker-compose up -d --build'
   }}
-  
+  }
   
   
 
