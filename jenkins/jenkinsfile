@@ -61,10 +61,10 @@ node {
   
   
    stage('Docker-Stage-Deployment') {
-   dir("/home/sri1056249/mvc/BookingProblem"){
+  
    sh label: '', script: 'sudo docker-compose up -d --build'
   }}
-  }
+  
   }
   
 
