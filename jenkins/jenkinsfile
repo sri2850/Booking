@@ -61,7 +61,7 @@ node {
   
   
    stage('Docker-Stage-Deployment') {
-   dir("/home/mtadminnuvepro/mvc/BookingProblem"){
+   dir("/home/sri1056249/mvc/BookingProblem"){
    sh label: '', script: 'sudo docker-compose up -d --build'
   }}
   }
