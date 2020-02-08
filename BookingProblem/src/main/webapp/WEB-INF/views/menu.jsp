@@ -11,7 +11,6 @@
 <div class =  form-group>
 <a href="/user">Registration</a> <br>
 <a href="/bookingLoad">Booking</a> <br>
-<a href="/view">view</a> <br>
 </div>
 </body>
 </html>
