@@ -1,0 +1,9 @@
+/home/sri1056249/mvc/Colleges/src/main/java/com/mindtree/colleges/controller/CollegeController.java
+/home/sri1056249/mvc/Colleges/src/main/java/com/mindtree/colleges/repository/CollegeRepository.java
+/home/sri1056249/mvc/Colleges/src/main/java/com/mindtree/colleges/repository/BranchRepository.java
+/home/sri1056249/mvc/Colleges/src/main/java/com/mindtree/colleges/service/CollegeService.java
+/home/sri1056249/mvc/Colleges/src/main/java/com/mindtree/colleges/entity/CollegeEntity.java
+/home/sri1056249/mvc/Colleges/src/main/java/com/mindtree/colleges/ServletInitializer.java
+/home/sri1056249/mvc/Colleges/src/main/java/com/mindtree/colleges/service/serviceImpl/CollegeServiceImpl.java
+/home/sri1056249/mvc/Colleges/src/main/java/com/mindtree/colleges/entity/BranchEntity.java
+/home/sri1056249/mvc/Colleges/src/main/java/com/mindtree/colleges/CollegesApplication.java
