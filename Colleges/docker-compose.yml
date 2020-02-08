@@ -2,7 +2,7 @@ version: '2'
 
 
 services:
-  bookingproblem:
+  college:
     build: . 
     ports:
       - '30088:8080'
