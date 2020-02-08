@@ -4,10 +4,10 @@ node {
 
      
   stage('Git-Checkout') {
-   git 'https://github.com/sri2850/mindtree-devops-30Jan2020.git'
+   git 'https://github.com/sri1056249/mvc.git'
   }
     
- def project_path="01-Jenkins/Code/petclinic"
+ def project_path="BoookingProblem"
  
  dir(project_path) {
     
