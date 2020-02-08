@@ -25,32 +25,9 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.eclipse.wst.jsdt.web.support/jsp -->
-		<dependency>
-			<groupId>org.eclipse.wst.jsdt.web.support</groupId>
-			<artifactId>jsp</artifactId>
-			<version>1.0.500</version>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.jenkins-ci.ui/jquery-detached -->
-<dependency>
-    <groupId>org.jenkins-ci.ui</groupId>
-    <artifactId>jquery-detached</artifactId>
-    <version>1.2.1</version>
-</dependency>
+
 		
-		<!-- https://mvnrepository.com/artifact/org.grails.plugins/jquery -->
-		<dependency>
-			<groupId>org.grails.plugins</groupId>
-			<artifactId>jquery</artifactId>
-			<version>1.11.1</version>
-			<scope>runtime</scope>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/cljsjs/jquery -->
-		<dependency>
-			<groupId>cljsjs</groupId>
-			<artifactId>jquery</artifactId>
-			<version>2.1.4-0</version>
-		</dependency>
+		
 
 <!-- https://mvnrepository.com/artifact/org.webjars/jquery-ui -->
 <dependency>
@@ -99,7 +76,6 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version> 5.1.47</version>
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
