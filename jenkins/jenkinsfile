@@ -7,7 +7,7 @@ node {
    git 'https://github.com/sri1056249/mvc.git'
   }
     
- def project_path="jenkins/BookingProblem/"
+ def project_path="BookingProblem"
  
  dir(project_path) {
     
