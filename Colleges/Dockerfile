@@ -10,7 +10,7 @@ RUN rm -rf /usr/local/tomcat/webapps/*
 
  
 
-COPY /var/lib/jenkins/workspace/College/Colleges/target/Colleges-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps/ROOT.war
+COPY ../Colleges/target/Colleges-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps/ROOT.war
 
  
 
