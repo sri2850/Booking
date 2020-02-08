@@ -5,7 +5,7 @@ node {
    git 'https://github.com/sri1056249/mvc.git'
   }
     
- def project_path="College"
+ def project_path="Colleges"
  
  dir(project_path) {
     
