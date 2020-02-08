@@ -1,5 +1,4 @@
 node {
- notify('Job Started') 
 
      
   stage('Git-Checkout') {
