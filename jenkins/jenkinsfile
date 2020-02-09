@@ -60,7 +60,7 @@ node {
 dir(project_terra) {
    stage('Prod Deployment on AWS'){
    sh label: 'terraform', script: '/usr/local/bin/terraform  init'
-   sh label: 'terraform', script: '/usr/local/bin/terraform  sudo apply -input=false -auto-approve'
+   sh label: 'terraform', script: 'sudo /usr/local/bin/terraform  apply -input=false -auto-approve'
    }
 }
   
