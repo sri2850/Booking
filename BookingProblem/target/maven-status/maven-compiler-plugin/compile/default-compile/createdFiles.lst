@@ -1,7 +1,7 @@
 com/mindtree/booking/BookingProblemApplication.class
 com/mindtree/booking/service/serviceImpl/BookingServiceImpl.class
-com/mindtree/booking/ServletInitializer.class
 com/mindtree/booking/repository/UserRepository.class
+com/mindtree/booking/ServletInitializer.class
 com/mindtree/booking/service/BookingService.class
 com/mindtree/booking/controller/BookingController.class
 com/mindtree/booking/entity/UserEntity.class
