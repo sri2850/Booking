@@ -1,9 +1,9 @@
 variable "key_name" {
-  default = "Booking"
+  default = "ind"
 }
 
 variable "pvt_key" {
-  default = "/.ssh/Booking.pem"
+  default = "/.ssh/ind.pem"
 }
 
 variable "us-east-zones" {
