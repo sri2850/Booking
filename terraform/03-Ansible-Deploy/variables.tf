@@ -1,9 +1,9 @@
 variable "key_name" {
-  default = "devops-my-aws-keypair"
+  default = "Booking"
 }
 
 variable "pvt_key" {
-  default = "/root/.ssh/amit-personal-aws.pem"
+  default = "/.ssh/Booking.pem"
 }
 
 variable "us-east-zones" {
@@ -11,5 +11,5 @@ variable "us-east-zones" {
 }
 
 variable "sg-id" {
-  default = "sg-00c3c981ea2a2ad80"
+  default = "sg-01eb4f696ab5fbaac"
 }
