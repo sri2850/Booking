@@ -16,35 +16,23 @@ node {
  stage('Maven-Compile') {
    sh label: '', script: 'mvn compile'
   }
-  
-  
-  
-  
 /*    stage('Sonar Analysis'){        
         withSonarQubeEnv('sonarqube'){
          sh 'mvn sonar:sonar'
             }
 }
   */
-  
-  
-  
-  
-   stage('Maven-Test') {
+  stage('Maven-Test') {
    sh label: '', script: 'mvn test'
   }
-  
-   stage('Maven-Package') {
+ stage('Maven-Package') {
    sh label: '', script: 'mvn package'
   }
   
    /*stage('Archive-Artifacts') {
    archiveArtifacts 'target/*.war'
   }
-  
-  
-  
-    stage('Jfrog Artifacory Upload') {
+   stage('Jfrog Artifacory Upload') {
         def server= Artifactory.server 'Artifactory'
                     def uploadSpec= """{
                         "files": [{
@@ -56,14 +44,21 @@ node {
         }}
      
   */
-  
-  
-  
-  
-   stage('Docker-Stage-Deployment') {
+  stage('Docker-Stage-Deployment') {
   
    sh label: '', script: 'sudo docker-compose up -d --build'
-  }}
+  }
+  
+  
+   stage('Geting Ready For Ansible') {
+  sh label: 'Docker', script: 'cp -rf target/*.war ../terraform/03-Ansible-Deploy/ansible/04-Tomcat/templates/'
+  sh label: 'Jenkins', script: "echo '<h1> TASK BUILD ID: ${env.BUILD_DISPLAY_NAME}</h1>' > ../terraform/03-Ansible-Deploy/ansible/04-Tomcat/templates/apps/index.html"
+}  
+  
+  
+  
+  
+  }
   
   }
   
