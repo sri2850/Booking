@@ -16,12 +16,12 @@ node {
  stage('Maven-Compile') {
    sh label: '', script: 'mvn compile'
   }
-/*    stage('Sonar Analysis'){        
+    stage('Sonar Analysis'){        
         withSonarQubeEnv('sonarqube'){
          sh 'mvn sonar:sonar'
             }
 }
-  */
+  
   stage('Maven-Test') {
    sh label: '', script: 'mvn test'
   }
@@ -29,7 +29,7 @@ node {
    sh label: '', script: 'mvn package'
   }
   
-   /*stage('Archive-Artifacts') {
+   stage('Archive-Artifacts') {
    archiveArtifacts 'target/*.war'
   }
    stage('Jfrog Artifacory Upload') {
@@ -43,7 +43,7 @@ node {
         
         }}
      
-  */
+  
   stage('Docker-Stage-Deployment') {
   
    sh label: '', script: 'sudo docker-compose up -d --build'
