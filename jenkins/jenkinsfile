@@ -2,7 +2,7 @@ node {
 
      
   stage('Git-Checkout') {
-   git 'https://github.com/sri1056249/mvc.git'
+   git 'https://github.com/sri1056249/Booking.git'
   }
     
  def project_path="BookingProblem"
