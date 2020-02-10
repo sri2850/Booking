@@ -3,7 +3,7 @@ variable "key_name" {
 }
 
 variable "pvt_key" {
-  default = "/.ssh/ind.pem"
+  default = "/home/mtadminnuvepro/.ssh/ind.pem"
 }
 
 variable "us-east-zones" {
