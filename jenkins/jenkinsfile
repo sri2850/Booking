@@ -1,48 +1,49 @@
 node {
-try  {
- notify('Job Started') 
-     
-  stage('Git-Checkout') {
-   git 'https://github.com/sri1056249/Booking.git'
-  }
-    
- def project_path="BookingProblem"
- 
- dir(project_path) {
-    
-  stage('Maven-Clean') {
-   sh label: '', script: 'mvn clean'
-  }
-    
- stage('Maven-Compile') {
-   sh label: '', script: 'mvn compile'
-  }
-    stage('Sonar Analysis'){        
-        withSonarQubeEnv('sonarqube'){
-         sh 'mvn sonar:sonar'
+    try  {
+        notify('Job Started') 
+        stage('Git-Checkout') {
+            git 'https://github.com/sri1056249/Booking.git'
+            
+        }
+        def project_path="BookingProblem"
+        dir(project_path) {
+            stage('Maven-Clean') {
+                sh label: '', script: 'mvn clean'
+                
             }
-}
-  
-  stage('Maven-Test') {
-   sh label: '', script: 'mvn test'
-  }
- stage('Maven-Package') {
-   sh label: '', script: 'mvn package'
-  }
-  
-   stage('Archive-Artifacts') {
-   archiveArtifacts 'target/*.war'
-  }
-   stage('Jfrog Artifacory Upload') {
-        def server= Artifactory.server 'Artifactory'
+            stage('Maven-Compile') {
+                sh label: '', script: 'mvn compile'
+                
+            }
+            stage('Sonar Analysis'){        
+                withSonarQubeEnv('sonarqube'){
+                    sh 'mvn sonar:sonar'
+                    
+                }
+                
+            }
+            stage('Maven-Test') {
+                sh label: '', script: 'mvn test'
+                
+            }
+            stage('Maven-Package') {
+                sh label: '', script: 'mvn package'
+                
+            }
+            stage('Archive-Artifacts') {
+                archiveArtifacts 'target/*.war'
+                
+            }
+            stage('Jfrog Artifacory Upload') {
+                def server= Artifactory.server 'Artifactory'
                     def uploadSpec= """{
                         "files": [{
                         "pattern": "target/*.war",
                         "target": "example-repo-local"}]
                     }"""
         server.upload(uploadSpec)
-        
-        }}
+                
+            }
      
   
   stage('Docker-Stage-Deployment') {
@@ -56,9 +57,9 @@ try  {
   sh label: 'Jenkins', script: "echo '<h1> TASK BUILD ID: ${env.BUILD_DISPLAY_NAME}</h1>' > ../terraform/03-Ansible-Deploy/ansible/04-Tomcat/templates/apps/index.html"
 }  
   
-  
-  def project_terra="../terraform/03-Ansible-Deploy"
-dir(project_terra) {
+    }
+  def project_terra="terraform/03-Ansible-Deploy"
+  dir(project_terra) {
    stage('Prod Deployment on AWS'){
    sh label: 'terraform', script: '/usr/local/bin/terraform  init'
    sh label: 'terraform', script: 'sudo /usr/local/bin/terraform  apply -input=false -auto-approve'
@@ -78,12 +79,4 @@ def notify(status){
 	<p>Check console output at <a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a></p>""",
 		)
 	}
-  
-  
-  
  
-  
-
-
-
-
