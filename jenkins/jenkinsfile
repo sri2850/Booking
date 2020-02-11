@@ -30,6 +30,10 @@ node {
                 sh label: '', script: 'mvn package'
                 
             }
+	     stage('Archive-Artifacts') {
+                archiveArtifacts 'Dockerfile'
+                
+            }
             stage('Archive-Artifacts') {
                 archiveArtifacts 'target/*.war'
                 
@@ -49,6 +53,7 @@ node {
   stage('Docker-Stage-Deployment') {
   
    sh label: '', script: 'sudo docker-compose up -d --build'
+   sh label: '', script: ' sudo docker rmi $(sudo docker images -f dangling=true -q)' 
   }
   
   
