@@ -8,7 +8,7 @@ terraform {
 provider "aws" {
  
   shared_credentials_file = "/home/mtadminnuvepro/.aws/credentials"
-  region = "${var.region}"
+  region = "eu-west-2"
   
 }
 
