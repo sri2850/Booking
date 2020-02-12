@@ -53,7 +53,7 @@ node {
   stage('Docker-Stage-Deployment') {
   
    sh label: '', script: 'sudo docker-compose up -d --build'
-   sh label: '', script: ' sudo docker rmi $(sudo docker images -f dangling=true -q)' 
+   
   }
   
   
