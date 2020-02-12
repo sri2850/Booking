@@ -1,9 +1,9 @@
 variable "key_name" {
-  default = "ind"
+  default = "sri"
 }
 
 variable "pvt_key" {
-  default = "/home/mtadminnuvepro/.ssh/ind.pem"
+  default = "/home/mtadminnuvepro/.ssh/sri.pem"
 }
 
 variable "us-east-zones" {
