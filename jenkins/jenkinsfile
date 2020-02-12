@@ -58,6 +58,7 @@ node {
   
   
    stage('Geting Ready For Ansible') {
+    sh label: '', script: 'sudo chmod 400 /home/mtadminnuvepro/.ssh/sri.pem'
   sh label: 'Docker', script: 'cp -rf target/*.war ../terraform/03-Ansible-Deploy/ansible/04-Tomcat/templates/'
   sh label: 'Jenkins', script: "echo '<h1> TASK BUILD ID: ${env.BUILD_DISPLAY_NAME}</h1>' > ../terraform/03-Ansible-Deploy/ansible/04-Tomcat/templates/apps/index.html"
 }  
