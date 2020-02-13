@@ -8,12 +8,12 @@ terraform {
 provider "aws" {
  
   shared_credentials_file = "/home/mtadminnuvepro/.aws/credentials"
-  region = "eu-west-2"
+  region = "${var.region}"
   
 }
 
 resource "aws_instance" "backend" {
-  ami                    = "ami-0a590332f9f499197"
+  ami                    = "ami-02d0ea44ae3fe9561"
   instance_type          = "t2.micro"
   key_name               = "${var.key_name}"
   vpc_security_group_ids = ["${var.sg-id}"]
