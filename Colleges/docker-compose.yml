@@ -1,8 +1,0 @@
-version: '2'
-
-
-services:
-  college:
-    build: . 
-    ports:
-      - '30088:8080'
