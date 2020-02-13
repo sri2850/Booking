@@ -1,19 +1,16 @@
 variable "key_name" {
-  default = "sri"
+  default = "srinivas"
 }
 
 variable "pvt_key" {
-  default = "/home/mtadminnuvepro/.ssh/sri.pem"
+  default = "/home/mtadminnuvepro/.ssh/srinivas.pem"
 }
 
-variable "us-east-zones" {
-  default = ["us-east-1a", "us-east-1b"]
-}
 
 variable "sg-id" {
-  default = "sg-088d4e5f71dbdc754"
+  default = "sg-0195c94726e86b385"
 }
 
 variable "region" {
-  default = "eu-west-2"
+  default = "us-west-2"
   }
