@@ -1,32 +1,11 @@
-FROM tomcat:9.0
+#Build jar or war for app
+FROM maven:3.6.3-jdk-8-slim AS build
+WORKDIR /home/app
+COPY . /home/app
+RUN mvn clean package
 
- 
-
-RUN echo 'Deploying War on Server'
-
- 
-
-RUN rm -rf /usr/local/tomcat/webapps/*
-
- 
-
-COPY target/BookingProblem-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps/ROOT.war
-
- 
-
+FROM openjdk:8-jdk-alpine AS runtime
 EXPOSE 8080
-
- 
-
-CMD ["catalina.sh", "run"]
-
-
-
-
-
-
-
-
-
-
+COPY --from=build /home/app/target/BookingProblem-0.0.1-SNAPSHOT.war BookingProblem-0.0.1-SNAPSHOT.war
+ENTRYPOINT ["sh", "-c", "java -jar /BookingProblem-0.0.1-SNAPSHOT.war"]
 
